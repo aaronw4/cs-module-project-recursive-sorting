@@ -23,9 +23,13 @@ def merge(arrA, arrB):
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
     # Your code here
+    if len(arr) < 2:
+        return arr
+    else:
+        rest = arr.pop(0)
+        return merge([rest], merge_sort(arr))
 
-
-    return arr
+    
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
