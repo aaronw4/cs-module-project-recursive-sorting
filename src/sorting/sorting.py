@@ -22,12 +22,24 @@ def merge(arrA, arrB):
 
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
+    # if len(arr) < 2:
+    #     return arr
+    # else:
+    #     rest = arr.pop(0)
+    #     return merge([rest], merge_sort(arr))
+
     # Your code here
+
     if len(arr) < 2:
         return arr
-    else:
-        rest = arr.pop(0)
-        return merge([rest], merge_sort(arr))
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        left = arr[:mid]
+        right = arr[mid:]    
+       
+        arr = merge(merge_sort(left),  merge_sort(right))
+    
+    return arr
 
     
 
@@ -37,7 +49,6 @@ def merge_sort(arr):
 # or data structures; it can only re-use the memory it was given as input
 # def merge_in_place(arr, start, mid, end):
     # Your code here
-
 
 # def merge_sort_in_place(arr, l, r):
     # Your code here
